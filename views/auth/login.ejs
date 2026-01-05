@@ -1,0 +1,26 @@
+<%- include('../partials/head') %>
+</head>
+<body class="bg-gray-100">
+		<%- include('../partials/nav') %>
+		<main class="container mx-auto mt-10 max-w-md flex flex-col">
+			<div class="bg-white rounded-lg shadow-lg p-8">
+				<h1 class="text-2xl font-bold mb-6 text-center text-blue-500">Login</h1>
+				<form action="/auth/login" method="POST" class="space-y-4">
+					<%- include('../partials/message') %>
+					<div>
+						<label class="block text-sm font-medium text-gray-700">Email</label>
+						<input name="email" type="text" required class="mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black" />
+					</div>
+					<div>
+						<label class="block text-sm font-medium text-gray-700">Password</label>
+						<input name="password" type="password" required class="mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black" />
+					</div>
+					      <a href="/auth/reset-password" class="text-sm text-blue-500 hover:underline">Reset here</a>
+
+						<button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Submit</button>
+					</div>
+				</form>
+			</div>
+		</main>
+	</body>
+</html>

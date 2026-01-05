@@ -1,0 +1,65 @@
+<header class="bg-blue-500 text-white p-4 shadow-md">
+  <nav class="container mx-auto flex justify-between ">
+    <ul class="flex items-center w-full space-x-4 ">
+      <li>
+        <a
+          href="/"
+          class="hover:bg-blue-400 py-2 px-4 rounded transition duration-300"
+          >Airbnb</a
+        >
+      </li>
+          <% if (isLoggedIn && user) { %>
+      <% if (user.user_type === 'guest') { %>
+        <li>
+          <a
+            href="/homes"
+            class="hover:bg-blue-400 py-2 px-4 rounded transition duration-300"
+            >Homes</a
+          >
+        </li>
+        <li>
+          <a
+            href="/fav"
+            class="hover:bg-blue-400 py-2 px-4 rounded transition duration-300"
+            >favorite</a
+          >
+        </li>
+      <% } %>
+
+      <% if (user.user_type === 'host') { %>
+       
+        <li>
+          <a
+            href="/host/edit"
+            class="hover:bg-blue-400 py-2 px-4 rounded transition duration-300"
+            >Host Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="/host/add-home"
+            class="hover:bg-blue-400 py-2 px-4 rounded transition duration-300"
+            >Add Home</a
+          >
+        </li>
+      <% } %>
+    </ul>
+
+          <form action="/auth/logout" method="POST" class="hover:bg-blue-400 py-2 px-4 rounded transition duration-300">
+            <input type="submit"  value="Logout">
+          </form>
+
+      <% } else { %>
+        <a
+          href="/auth/login"
+          class="hover:bg-blue-400 py-2 px-4 rounded transition duration-300 "
+          >Login</a>
+        
+           <a
+          href="/auth/signin"
+          class="hover:bg-blue-400 py-2 px-4 rounded transition duration-300 "
+          >SignIn</a>
+
+      <% } %>
+  </nav>
+</header>

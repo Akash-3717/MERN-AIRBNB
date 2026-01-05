@@ -1,0 +1,62 @@
+<%- include('../partials/head') %>
+	</head>
+	<body class="bg-gray-100">
+		<%- include('../partials/nav') %>
+		<main class="container mx-auto mt-10 max-w-md flex flex-col">
+			<div class="bg-white rounded-xl shadow-xl p-8 sm:p-10">
+				<div class="text-center mb-6">
+					<div class="mx-auto h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
+						<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v6"></path></svg>
+					</div>
+					<h1 class="text-2xl font-extrabold mt-3 text-blue-600">Create account</h1>
+					<p class="text-sm text-gray-500 mt-1">Join as a guest or host — it only takes a minute.</p>
+				</div>
+				<form action="/auth/signin" method="POST" class="space-y-5">
+
+			     	<%- include('../partials/message') %>
+
+					<div>
+						<label class="block text-sm font-medium text-gray-700">Name</label>
+						<input name="username" type="text" placeholder="Your full name" required class="mt-1 block w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-gray-400" />
+					</div>
+					<div>
+						<label class="block text-sm font-medium text-gray-700">Email</label>
+						<input name="email" type="text" placeholder="Your full name" required class="mt-1 block w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-gray-400" />
+					</div>
+					<div>
+						<label class="block text-sm font-medium text-gray-700">Password</label>
+						<input name="password" type="password" placeholder="Choose a strong password" required class="mt-1 block w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-gray-400" />
+					</div>
+					<div>
+						<label class="block text-sm font-medium text-gray-700"> Confirm Password</label>
+						<input name="confirm_password" type="password" placeholder="Repeat password" required class="mt-1 block w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-gray-400" />
+					</div>
+					<div>
+							<label class="block text-sm font-medium text-gray-700 mb-2">User Type</label>
+							<div class="flex items-center gap-3">
+								<label class="cursor-pointer">
+									<input type="radio" name="user_type" value="guest" required class="hidden peer/guest" />
+									<span class="px-3 py-1 rounded-full border border-gray-300 text-sm text-gray-700 guest peer-checked/guest:bg-blue-600 peer-checked/guest:text-white">Guest</span>
+								</label>
+								<label class="cursor-pointer">
+									<input type="radio" name="user_type" value="host" class="hidden peer/host" />
+									<span class="px-3 py-1 rounded-full border border-gray-300 text-sm text-gray-700 host peer-checked/host:bg-blue-600 peer-checked/host:text-white">Host</span>
+								</label>
+							</div>
+					</div>
+						<div class="flex items-center justify-between">
+							<div class="flex items-center">
+								<input id="terms" name="terms" type="checkbox" required class="h-4 w-4 text-blue-600" />
+								<label for="terms" class="ml-2 block text-sm text-gray-600">I agree to the <a href="/terms" class="text-blue-500 underline">Terms and Conditions</a></label>
+							</div>
+							<a href="/auth/login" class="font-medium text-blue-500 hover:text-blue-700"> Already have an account?</a>
+						</div>
+					<div class="mt-6">
+						<button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Create account</button>
+					</div>
+					</form>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
